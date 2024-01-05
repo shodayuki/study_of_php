@@ -1,8 +1,8 @@
 <?php
 
-require_once ('./classes/Human.php');
-require_once ('./classes/Enemy.php');
-require_once ('./classes/Brave.php');
+require_once('./classes/Human.php');
+require_once('./classes/Enemy.php');
+require_once('./classes/Brave.php');
 require_once('./classes/BlackMage.php');
 require_once('./classes/WhiteMage.php');
 
@@ -19,9 +19,7 @@ $enemies[] = new Enemy('モルボル', 30);
 $turn = 1;
 $isFinishFlg = false;
 
-// どちらかのHPが0になるまで繰り返す
-while ($isFinishFlg) {
-
+while (!$isFinishFlg) {
     echo "*** $turn ターン目 ***\n\n";
 
     // 現在のHPを表示
