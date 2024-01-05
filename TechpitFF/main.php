@@ -1,6 +1,7 @@
 <?php
 
 require_once('./lib/Loader.php');
+require_once('./lib/Utility.php');
 
 // オートロード
 $loader = new Loader();
@@ -22,22 +23,6 @@ $turn = 1;
 $isFinishFlg = false;
 
 $messageObj = new Message;
-
-function isFinish($objects)
-{
-    $deathCnt = 0;
-
-    foreach ($objects as $object) {
-        if ($object->getHitPoint() > 0) {
-            return false;
-        }
-        $deathCnt++;
-    }
-
-    if ($deathCnt === count($objects)) {
-        return true;
-    }
-}
 
 while (!$isFinishFlg) {
     echo "*** $turn ターン目 ***\n\n";
